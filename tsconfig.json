@@ -9,7 +9,7 @@
     "sourceMap": true,
     "lib": ["es5", "dom"],
     "strictNullChecks": false,
-    "baseUrl": "./src",
+    "baseUrl": "./src/web",
     "paths": {},
     "types": [
       "core-js",
