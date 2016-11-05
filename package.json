@@ -1,6 +1,6 @@
 {
   "name": "angular-seed-ultimate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Webpack2 driven Angular2 ngrx Multi-Platform Seed",
   "repository": {
     "url": "git@github.com:DeviantJS/angular-seed-ultimate.git",
