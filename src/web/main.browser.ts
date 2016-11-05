@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { NgModule, ApplicationRef, enableProdMode } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer, bootloader } from '@angularclass/hmr';
 
 import { App } from './app/app';

@@ -25,7 +25,7 @@
     "debug:start": "node-nightly --inspect --debug-brk node_modules/webpack-dev-server/bin/webpack-dev-server.js --env.ENV development",
     "debug:build": "node-nightly --inspect --debug-brk node_modules/webpack/bin/webpack.js --env.ENV development",
     "rimraf": "rimraf",
-    "lint": "yarn run tslint \"src/**/*.ts\"",
+    "lint": "tslint \"src/**/*.ts\"",
     "tslint": "tslint",
     "prebuild": "rimraf dist/*.*",
     "build": "yarn run build:dev",

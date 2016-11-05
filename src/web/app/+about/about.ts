@@ -27,6 +27,8 @@ import { AppStore } from '../app-store';
   `
 })
 export class About {
+  public email: string;
+
   localState = {
     email: ''
   };
