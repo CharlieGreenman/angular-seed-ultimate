@@ -37,8 +37,7 @@ export function ngrx(env?: any) {
     '@ngrx/router-store',
     '@ngrx/store',
     '@ngrx/store-devtools',
-    '@ngrx/store-log-monitor',
-    'rxj@ngrxs/add/operator/distinctUntilChanged',
+    '@ngrx/store-log-monitor'
   ];
 }
 

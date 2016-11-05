@@ -1,37 +1,19 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    <%= htmlWebpackPlugin.options.meta.title %>
-  </title>
-  <meta name="description" content="<%= htmlWebpackPlugin.options.meta.title %>">
-  <% if (webpackConfig.htmlElements.headTags) { %>
-    <!-- Head Tags  -->
-    <%= webpackConfig.htmlElements.headTags %>
-      <% } %>
-        <!-- base url -->
-        <base href="/">
+  <title>Angular Seed Ultimate</title>
+  <base href="/">
+
 </head>
-
 <body>
-  <my-app>
+
+  <app>
     Loading...
-  </my-app>
+  </app>
 
-  <% if (htmlWebpackPlugin.options.isWebpackDevServer) { %>
-    <!-- Webpack Dev Server -->
-    <script src="/webpack-dev-server.js"></script>
-    <% } %>
-      <% if (htmlWebpackPlugin.options.isDev) { %>
-        <!-- Webpack Dev Server -->
-        <script src="/polyfills.dll.js"></script>
-        <script src="/vendors.dll.js"></script>
-        <script src="/rxjs.dll.js"></script>
-        <% } %>
+  <script src="/dll/polyfills.js"></script>
+  <script src="/dll/vendors.js"></script>
+  <script src="/main.bundle.js"></script>
+
 </body>
-
 </html>
