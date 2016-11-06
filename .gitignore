@@ -40,3 +40,12 @@ node_modules
 /generated
 .awcache
 .DS_Store
+
+# mobile
+/src/mobile/**/*.js
+/src/mobile/**/*.map
+/src/mobile/app/css
+/src/mobile/hooks
+/src/mobile/lib
+/src/mobile/platforms
+
