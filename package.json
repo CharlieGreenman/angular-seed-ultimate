@@ -28,6 +28,7 @@
     "lint": "tslint \"src/**/*.ts\"",
     "tslint": "tslint",
     "prebuild": "rimraf dist/*.*",
+    "nuke.it": "git clean -dfx -e '.*' && npm install",
     "build": "yarn run build:dev",
     "build:dev": "webpack --env.ENV development  --progress --profile",
     "build:prod": "webpack --env.ENV development   --progress --profile --bail",
