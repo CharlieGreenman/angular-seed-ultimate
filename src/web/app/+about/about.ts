@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AppStore } from '../app-store';
 
 @Component({
+  styles: [require('./about.scss')],
   template: `
     <h2>About</h2>
 

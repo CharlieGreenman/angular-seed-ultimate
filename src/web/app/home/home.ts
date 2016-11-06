@@ -11,7 +11,7 @@ export class Home {
 @Component({
   template: `
     <div>
-      YOLO
+      <h4>YOLO</h4>
     </div>
   `
 })

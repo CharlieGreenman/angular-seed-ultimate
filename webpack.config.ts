@@ -13,6 +13,8 @@ const {
 } = require('webpack');
 const { ConcatSource } = require('webpack-sources');
 const { ForkCheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
@@ -26,7 +28,7 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
   const CONSTANTS = {
     ENV: JSON.stringify(options.ENV),
     HMR: Boolean(options.HMR),
-    PORT: 3000,
+    PORT: 4200,
     HOST: 'localhost',
     HTTPS: false
   };
@@ -83,6 +85,11 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
         { test: /\.json$/, loader: 'json-loader', include: [root('./src/web')] },
         { test: /\.html/,  loader: 'raw-loader', include: [root('./src/web')] },
         { test: /\.css$/,  loader: 'raw-loader', include: [root('./src/web')] },
+        { test: /\.scss$/, loaders: ['raw-loader', 'sass-loader'] },
+        { test: /init\.scss$/, loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader!sass-loader?sourceMap' }) },
+        { test: /\.woff(2)?(\?v=.+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
+        { test: /\.(ttf|eot|svg)(\?v=.+)?$/, loader: 'file-loader'},
+
       ]
 
     },
@@ -102,7 +109,10 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
         context: '.',
         manifest: getManifest('polyfills'),
       }),
-
+      new CopyWebpackPlugin([{
+        from: 'src/web/assets',
+        to: 'assets'
+      }]),
       new TsConfigPathsPlugin(/* { tsconfig, compiler } */),
       new ForkCheckerPlugin(),
       new DefinePlugin(CONSTANTS),
@@ -112,7 +122,7 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
     ].concat(CONSTANTS.HMR ? new HotModuleReplacementPlugin() : []),
 
     resolve: {
-      extensions: ['.ts', '.js', '.json'],
+      extensions: ['.ts', '.js', '.css', '.scss', '.json'],
       // unsafeCache: true
     },
 
