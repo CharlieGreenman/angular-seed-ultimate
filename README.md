@@ -15,6 +15,7 @@ Reactive Angular2 Multi-Platform Seed with tooling for Web, Mobile Native Platfo
 
 ## Table of Contents
 - [What's Inside](#whats-inside)
+- [Up and Running](#up-and-running)
 - [Development Experience](#development-experience)
 - [Supported Versions](#supported-versions)
 - [Usage](#usage)
@@ -37,6 +38,16 @@ Reactive Angular2 Multi-Platform Seed with tooling for Web, Mobile Native Platfo
 
 Please note this is not an `all the things` starter project. Libs like `Material2 & Bootstrap` will not be added though adding a Wiki page for integration instructions is always welcome.
 What you see listed above is the limit of what will be added, we want this concise and as lean as possible allowing for the developer to choose what libs best meet his/her requirements.
+
+#### Up and Running
+This build supports Yarn. To get this build up and running, run the following commands.
+
+```
+yarn
+yarn start
+```
+Navigate to `http://localhost:4200/` and you are good to go!
+
 
 #### Development Experience
 
